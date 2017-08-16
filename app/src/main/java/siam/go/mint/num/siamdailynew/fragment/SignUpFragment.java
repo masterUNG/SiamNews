@@ -1,6 +1,7 @@
 package siam.go.mint.num.siamdailynew.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 import siam.go.mint.num.siamdailynew.R;
 import siam.go.mint.num.siamdailynew.manage.MyAlert;
@@ -21,7 +23,7 @@ public class SignUpFragment extends Fragment {
     //Explicit
     private String nameString, surnameString, emailString,
             userString, passwordString, genderString, divisionString, rePasswordString;
-
+    private boolean aBoolean = true;
 
     @Nullable
     @Override
@@ -42,7 +44,28 @@ public class SignUpFragment extends Fragment {
         //Save Controller
         saveController();
 
+        //Gender Controller
+        genderController();
+
     }   // onActivityCreate
+
+    private void genderController() {
+        RadioGroup radioGroup = getView().findViewById(R.id.ragGender);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                aBoolean = false;
+                switch (i) {
+                    case R.id.radMale:
+                        genderString = "Male";
+                        break;
+                    case R.id.radFemale:
+                        genderString = "Female";
+                        break;
+                }
+            }
+        });
+    }
 
     private void saveController() {
         ImageView imageView = getView().findViewById(R.id.imvSave);
@@ -72,6 +95,16 @@ public class SignUpFragment extends Fragment {
                     MyAlert myAlert = new MyAlert(getActivity());
                     myAlert.myDialog(getResources().getString(R.string.have_space),
                             getResources().getString(R.string.message_have_space));
+                } else if (!passwordString.equals(rePasswordString)) {
+                    //Not Math Password
+                    MyAlert myAlert = new MyAlert(getActivity());
+                    myAlert.myDialog(getString(R.string.title_not_math),
+                            getString(R.string.message_not_math));
+                } else if (aBoolean) {
+                    //Non Choose Gener
+                    MyAlert myAlert = new MyAlert(getActivity());
+                    myAlert.myDialog(getString(R.string.title_non_choose),
+                            getString(R.string.message_non_choose));
                 }
 
 
