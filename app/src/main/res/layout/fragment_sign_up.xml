@@ -158,8 +158,20 @@
                 android:background="@drawable/bg_edtitext"
                 android:textColorHint="@color/colorPrimaryLight"
                 android:textColor="@color/colorPrimaryDark"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:hint="@string/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!--Re Password-->
+            <EditText
+                android:id="@+id/edtRePassword"
+                android:layout_marginBottom="@dimen/padding"
+                android:background="@drawable/bg_edtitext"
+                android:textColorHint="@color/colorPrimaryLight"
+                android:textColor="@color/colorPrimaryDark"
+                android:inputType="textPassword"
+                android:hint="@string/re_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
