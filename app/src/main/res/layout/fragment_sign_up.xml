@@ -5,9 +5,46 @@
     android:orientation="vertical">
 
     <!--ToolBar-->
-    <include
-        android:id="@+id/mainToolbar"
-        layout="@layout/toolbar" />
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Back-->
+            <ImageView
+                android:src="@mipmap/ic_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--Title-->
+            <TextView
+                android:textColor="@color/textcolorPrimary"
+                android:text="Please Register"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--Save-->
+            <ImageView
+                android:src="@mipmap/ic_save"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+
     <!--Content-->
     <ScrollView
         android:layout_width="match_parent"
@@ -22,34 +59,26 @@
 
             <!--Name-->
             <EditText
+                android:layout_marginBottom="@dimen/padding"
+                android:background="@drawable/bg_edtitext"
+                android:textColorHint="@color/colorPrimaryLight"
+                android:textColor="@color/colorPrimaryDark"
                 android:inputType="text"
                 android:hint="@string/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-            <!--User-->
+
+            <!--SurName-->
             <EditText
-                android:inputType="text"
-                android:hint="@string/user"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <!--Password-->
-            <EditText
-                android:inputType="text"
-                android:hint="@string/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <!--Division-->
-            <TextView
+                android:layout_marginBottom="@dimen/padding"
+                android:background="@drawable/bg_edtitext"
+                android:textColorHint="@color/colorPrimaryLight"
                 android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:textSize="@dimen/h1"
-                android:text="@string/division"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <Spinner
+                android:inputType="text"
+                android:hint="@string/surname"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
+
 
             <!--Gender-->
             <TextView
@@ -66,7 +95,6 @@
                 android:layout_height="wrap_content">
                 <!--Male-->
                 <RadioButton
-                    android:checked="true"
                     android:text="@string/male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -77,6 +105,69 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </RadioGroup>
+
+
+            <!--Email-->
+            <EditText
+                android:layout_marginBottom="@dimen/padding"
+                android:background="@drawable/bg_edtitext"
+                android:textColorHint="@color/colorPrimaryLight"
+                android:textColor="@color/colorPrimaryDark"
+                android:inputType="text"
+                android:hint="@string/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!--Division-->
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="@string/division"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--User-->
+            <EditText
+
+                android:layout_marginBottom="@dimen/padding"
+                android:background="@drawable/bg_edtitext"
+                android:textColorHint="@color/colorPrimaryLight"
+                android:textColor="@color/colorPrimaryDark"
+                android:inputType="text"
+                android:hint="@string/user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <!--Password-->
+            <EditText
+                android:layout_marginBottom="@dimen/padding"
+                android:background="@drawable/bg_edtitext"
+                android:textColorHint="@color/colorPrimaryLight"
+                android:textColor="@color/colorPrimaryDark"
+                android:inputType="text"
+                android:hint="@string/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+            <!--&lt;!&ndash;Show CheckBox&ndash;&gt;-->
+            <!--<CheckBox-->
+                <!--android:text="Doramon"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+
+
+
+
         </LinearLayout>
 
     </ScrollView>
