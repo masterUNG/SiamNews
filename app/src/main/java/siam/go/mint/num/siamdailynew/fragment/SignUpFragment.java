@@ -76,6 +76,7 @@ public class SignUpFragment extends Fragment {
         });
     }
 
+
     private void saveController() {
         ImageView imageView = getView().findViewById(R.id.imvSave);
         imageView.setOnClickListener(new View.OnClickListener() {
